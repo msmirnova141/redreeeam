@@ -1,83 +1,243 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+/* BASIC STYLINGS
+============================================================================= */
+body                            { padding-top:20px;
+                                  font-family: 'Amatic SC';
+                                  color: #3E445B;
+                                  background:#F5F5F5;}
+a                               {color: #3E445B;}
+h1 {
+
+  letter-spacing: 0.1em;
+  color: #3E445B;
+  font-size:60px;
+  font-weight: 500;
+}
+label                           {color: #3E445B;}
+pre                             { margin-bottom:20px; }
+
+/* form styling */
+#form-container                { background:#F5F5F5; margin-bottom:20px;
+    }
+#form-container .page-header   { background:#F5F5F5; margin:0; padding:30px;
+border-bottom: none;}
+
+/* numbered buttons */
+#status-buttons                 {  }
+#status-buttons a               { color: #3E445B; display:inline-block; font-size:24px; margin-right:10px; text-align:center; text-transform:uppercase; }
+#status-buttons a:hover         { text-decoration:none; }
+#status-buttons span            { background:#080808; display:block; height:30px; margin:0 auto 10px; padding-top:5px; width:30px; 
+    border-radius:50%; }
+
+/* active buttons */
+#status-buttons a.active span   { background:#00BC8C; }
+
+/* ANIMATION STYLINGS
+============================================================================= */
+#signup-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
+}
+    
+/* enter animation */
+#form-views.ng-enter            { 
+    -webkit-animation:slideInRight 0.5s both ease;
+  -moz-animation:slideInRight 0.5s both ease;
+  animation:slideInRight 0.5s both ease; 
 }
 
-body {
-  padding: 0;
+/* leave animation */
+#form-views.ng-leave            { 
+    -webkit-animation:slideOutLeft 0.5s both ease;
+  -moz-animation:slideOutLeft 0.5s both ease;
+  animation:slideOutLeft 0.5s both ease;   
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+  to    { transform: translateX(-200%); }
+}
+@-moz-keyframes slideOutLeft {  
+  to    { -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes slideOutLeft {
+  to    { -webkit-transform: translateX(-200%); }
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+/* slide in from the right */
+@keyframes slideInRight {
+  from  { transform:translateX(200%); }
+  to    { transform: translateX(0); }
 }
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+@-moz-keyframes slideInRight {
+  from  { -moz-transform:translateX(200%); }
+  to    { -moz-transform: translateX(0); }
 }
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+@-webkit-keyframes slideInRight {
+  from  { -webkit-transform:translateX(200%); }
+  to    { -webkit-transform: translateX(0); }
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
-}
+/*
 
-/* Main marketing message and sign up button */
-.jumbotron {
+===================================================================================*/
+
+$blue: #2196F3;
+$transition: 300ms ease;
+
+
+.title {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+  font-weight: 200;
+  margin-top: 50px;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+.input-wrapper {
+  position: absolute;
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto 0;
+
+  .query {
+
+    &:focus {
+      outline: none;
+      border: 1px solid $blue;
+
+      transition: $transition;
+    }
+
+    transition: $transition;
+  }
+
+  .loader {
+    height: 5px;
+    margin: 0;
+    padding: 0;
+    background: white;
+    margin: 0 auto;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $blue;
+      width: 0%;
+      height: 5px;
+
+      transition: $transition;
+    }
+
+    &.done {
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  .clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 30px;
+    opacity: 1;
+
+    &:before {
+      content: '\00d7';
+      color: $blue;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      line-height: 50px;
+      
+      transition: $transition;
+    }
+    
+    &:hover {
+      &:before {
+        cursor: pointer;
+      }
+    }
+  }
+  
+  &.active {
+    margin-top: -55px;
+    
+    .query {
+      height: 30px;
+      margin-top: 0px;
+
+      transition: $transition;
+    }
+    
+    .clear {
+      height: 30px;
+      
+      &:before {
+        line-height: 30px;
+      }
+    }
+  }
+  
+  &.empty {
+    .clear {
+      opacity: 0;
+    }
+  }
+  
+  transition: $transition;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
+.result {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 5% 25px 0;
+  /* background: #eee; */
+  
+  img, p.no-results {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    opacity: 1;
+    
+    &.hidden {
+      opacity: 0;
+      
+      transition: $transition;
+    }
+    
+    transition: $transition;
   }
+  
+  p.no-result {
+    font-weight: 200;
+    
+    &.center {
+      text-align: center;
+    }
+  }
+}
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
+.random {
+
+  &:hover {
+    background: darken($blue, 10%);
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
+  
+  &.active {
+    opacity: 1;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+  
+  transition: $transition;
 }

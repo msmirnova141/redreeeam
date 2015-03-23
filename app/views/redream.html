@@ -1,0 +1,35 @@
+<div class="row">
+<div class="col-sm-8 col-sm-offset-2">
+
+  <div id="form-container">
+  
+      <div ng-hide="start" class="page-header text-center">
+      
+      <h1>REDRE#M</h1>
+          
+      <a ng-click="start = !start" ui-sref="redream.refeel" class="btn btn-block btn-info">START</a>
+          <!-- the links to our nested states using relative paths -->
+          <!-- add the active class if the state matches our ui-sref -->
+<!--           <div id="status-buttons" class="text-center">
+              <a ui-sref-active="active" ui-sref=".refeel"><span>1</span> Refeel</a>
+              <a ui-sref-active="active" ui-sref=".recall"><span>2</span> Recall</a>
+              <a ui-sref-active="active" ui-sref=".results"><span>3</span> Result</a>
+          </div> -->
+      </div>
+      
+      <!-- use ng-submit to catch the form submission and use our Angular function -->
+      <form ng-show="start" id="signup-form" ng-submit="processForm()">
+          <!-- our nested state views will be injected here -->
+          <div id="form-views" ui-view></div>
+      </form>
+  
+  </div>
+  
+  <!-- show our formData as it is being typed -->
+  <pre>
+    {{ formData }}
+  </pre>
+
+</div>
+</div>
+
