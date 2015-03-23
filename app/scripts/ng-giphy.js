@@ -16,7 +16,8 @@ angular.module('ngGiphy', [])
     output.scope = {
       query : '@query',
       limit : '@limit',
-      offset : '@offset'
+      offset : '@offset',
+      id: '@id'
     }
 
 
@@ -65,6 +66,9 @@ angular.module('ngGiphy', [])
                 if(typeof data=='object'){
                   scope.results = data.data;
                   scope.dataLoaded = true;
+                  console.log(data.data);
+                  
+
                 }
 
               }

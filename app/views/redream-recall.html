@@ -1,7 +1,10 @@
 <label>What's Your Console of Choice?</label>
 <div class="form-group">
-   <pre>&lt;ng-giphy-search query="cats" template-url="views/giphy-view-custom.html"></ng-giphy-search></pre>
-      <ng-giphy-search query="cats" limit="5" template-url="views/giphy-view-custom.html"></ng-giphy-search>
+      <ng-giphy-search query="{{ formData.name }}" limit="1" template-url="views/giphy-view-custom.html"></ng-giphy-search>
+
+    <ng-giphy-search query="kittens" limit="1" template-url="views/giphy-view-custom.html"></ng-giphy-search>
+
+    <ng-giphy-search query="dog" limit="20" template-url="views/giphy-view-custom.html"></ng-giphy-search>
 
 <div class="form-group row">
 <!-- <div class="col-xs-6 col-xs-offset-3">
