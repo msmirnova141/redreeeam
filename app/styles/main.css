@@ -1,67 +1,327 @@
-html, body{
-  background:#F5F5F5;
-}
-
-
-
 /* BASIC STYLINGS
 ============================================================================= */
-body                            { padding-top:20px;
-                                  font-family: 'Amatic SC';
-                                  color: #3E445B;
-                                  background:#F5F5F5;}
-a                               {color: #3E445B;}
-h1 {
 
+html, body 
+{ 
+  padding-top: 0px;
+  font-family: 'Lora';
+  color: #3E445B;
+  background:#F5F5F5;
+  height: 100%;
+}
+#next {
+  float: right;
+  margin-right: 15px;
+
+}
+a
+{
+  color: #3E445B;
+}
+
+h1 
+{
+  font-family: 'Amatic SC';
   letter-spacing: 0.1em;
   color: #3E445B;
+  font-size:50px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+h2 
+{
+  font-family: 'Amatic SC';
+  letter-spacing: 0.1em;
+  color: white;
   font-size:60px;
   font-weight: 500;
+  margin-top: 2.5em;
+  margin-bottom: 0;
+  -webkit-text-stroke-width: 0.4px;
 }
-label                           {color: #3E445B;}
-pre                             { margin-bottom:20px; }
+
+h3 
+{
+  font-family: 'Yanone Kaffeesatz';
+  letter-spacing: 0.1em;
+  font-size: 23px!important;
+  margin: 0.3em 0!important;
+}
+h4 
+{
+  font-family: 'Yanone Kaffeesatz';
+  letter-spacing: 0.1em;
+  font-size: 50px!important;
+  margin: 0.3em 0!important;
+  color: white;
+}
+h5 
+{
+  font-family: 'Yanone Kaffeesatz';
+  letter-spacing: 0.1em;
+  font-size: 16px!important;
+  margin: 0.3em 0!important;
+  -webkit-text-stroke-width: 0.4px;
+}
+p
+{
+  font-family:"Lora";
+  letter-spacing: 0.07em;
+  color: white;
+  padding: none;
+}
+
+label
+{
+  color: #3E445B;
+}
+
+pre                             
+{ 
+  margin-bottom:20px; 
+}
+
+/*gif background for start page*/
+#gif-bg
+{
+    position:absolute; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    top: 0px; 
+}
 
 /* form styling */
-#form-container                { background:#F5F5F5; margin-bottom:20px;
-    }
-#form-container .page-header   { background:#F5F5F5; margin:0; padding:30px;
-border-bottom: none;}
+#form-container
+{ 
+  /*background:#F5F5F5; */
+  margin-bottom:20px;
+}
+
+#form-container .page-header   
+{ 
+  /*background:#F5F5F5; */
+  margin:0; 
+  padding:30px;
+  border-bottom: none;
+}
 
 /* numbered buttons */
-#status-buttons                 {  }
-#status-buttons a               { color: #3E445B; display:inline-block; font-size:24px; margin-right:10px; text-align:center; text-transform:uppercase; }
-#status-buttons a:hover         { text-decoration:none; }
-#status-buttons span            { background:#080808; display:block; height:30px; margin:0 auto 10px; padding-top:5px; width:30px; 
-    border-radius:50%; }
+#status-buttons                 
+{  
+
+}
+
+#status-buttons a               
+{ 
+  color: #3E445B; 
+  display:inline-block; 
+  font-size:24px; 
+  margin-right:10px; 
+  text-align:center; 
+  text-transform:uppercase; 
+}
+
+#status-buttons a:hover         
+{ 
+  text-decoration:none; 
+}
+
+#status-buttons span            
+{ 
+  background:#080808; 
+  display:block; 
+  height:30px; 
+  margin:0 auto 10px; 
+  padding-top:5px; 
+  width:30px; 
+  border-radius:50%; 
+}
 
 /* active buttons */
-#status-buttons a.active span   { background:#00BC8C; }
+#status-buttons a.active span   
+{ 
+  background:#00BC8C; 
+}
+
+.btn 
+{
+  border: none;
+  border-radius: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 6px 90px 6px 90px;
+  display: inline-block;
+  /*margin: 15px 30px;*/
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Start Button */
+.btn-1 
+{
+  border: 2px solid #fff;
+  color: #fff;
+  overflow: hidden;
+}
+
+.btn-1:active 
+{
+  border-color: #17954c;
+  color: #17954c;
+}
+
+.btn-1:hover, .btn-1:active 
+{
+  color: #3E445B;
+  background: #fff;
+}
+
+.btn-1:before 
+{
+  position: absolute;
+  height: 100%;
+  font-size: 125%;
+  line-height: 3.5;
+  color: #fff;
+  top: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-1:before 
+{
+  left: 65%;
+  top: -50%;
+  color: #3E445B;
+  opacity: 0;
+}
+
+.btn-1:hover:before 
+{
+  left: 82%;
+  opacity: 1;
+}
+.typcn-arrow-right
+{
+  font-size: 24px;
+}
+
+/* Refeel Button */
+.btn-2 
+{
+  border: 2px solid #3E445B;
+  color: #3E445B;
+  overflow: hidden;
+}
+
+.btn-2:active 
+{
+  border-color: #3E445B;
+  color: #3E445B;
+}
+
+.btn-2:hover, .btn-2:active 
+{
+  color: #F5F5F5;
+  background: #3E445B;
+}
+
+.btn-2:before 
+{
+  position: absolute;
+  height: 100%;
+  font-size: 125%;
+  line-height: 3.5;
+  color: #3E445B;
+  top: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-2:before 
+{
+  left: 65%;
+  top: -50%;
+  color: #F5F5F5;
+  opacity: 0;
+}
+
+.btn-2:hover:before 
+{
+  left: 82%;
+  opacity: 1;
+}
 
 /* ANIMATION STYLINGS
 ============================================================================= */
-#signup-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
+#signup-form            
+{ 
+  position:relative; 
+  min-height:1000px; 
+  overflow:hidden; 
+  padding:0px; 
+}
 
 /* basic styling for entering and leaving */
 /* left and right added to ensure full width */
-#form-views.ng-enter,
-#form-views.ng-leave      { position:absolute; left:30px; right:30px;
-    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
+#form-views.ng-enter, #form-views.ng-leave      
+{ 
+  position:absolute; 
+  left:0px; 
+  right:0px;
+  transition:0.5s all ease; 
+  -moz-transition:0.5s all ease; 
+  -webkit-transition:0.5s all ease; 
 }
     
 /* enter animation */
-#form-views.ng-enter            { 
-    -webkit-animation:slideInRight 0.5s both ease;
+#form-views.ng-enter            
+{ 
+  -webkit-animation:slideInRight 0.5s both ease;
   -moz-animation:slideInRight 0.5s both ease;
   animation:slideInRight 0.5s both ease; 
 }
 
 /* leave animation */
-#form-views.ng-leave            { 
-    -webkit-animation:slideOutLeft 0.5s both ease;
+#form-views.ng-leave            
+{ 
+  -webkit-animation:slideOutLeft 0.5s both ease;
   -moz-animation:slideOutLeft 0.5s both ease;
   animation:slideOutLeft 0.5s both ease;   
 }
-
+.md-grid-list md-grid-tile {
+  background: black;
+  background-repeat: none;
+}
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px; }
+.gridListdemoBasicUsage .gray {
+  background-color: black; }
+.gridListdemoBasicUsage .green {
+  background: #b9f6ca; }
+.gridListdemoBasicUsage .yellow {
+  background: #ffff8d; }
+.gridListdemoBasicUsage .blue {
+  background: #84ffff; }
+.gridListdemoBasicUsage .purple {
+  background: #b388ff; }
+.gridListdemoBasicUsage .red {
+  background: #ff8a80; }
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
 /* ANIMATIONS
 ============================================================================= */
 /* slide out to the left */
@@ -89,6 +349,22 @@ border-bottom: none;}
   to    { -webkit-transform: translateX(0); }
 }
 
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display:none; 
+        opacity: 0;
+    }
+
+    1% {
+        display: block ; 
+        opacity: 0;
+    }
+
+    100% {
+        display: block ; 
+        opacity: 1;
+    }
+}
 /*
 
 ===================================================================================*/

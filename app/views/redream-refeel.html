@@ -1,17 +1,38 @@
-<div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" name="name" ng-model="formData.name">
+<div class="text-center" style="margin= 0">
+	<h1 style="margin = 0;" >REFEEL</h1>
+	
+	<br><h5>what was the theme of your dream?</h5></br>
+	<br></br>
+
 </div>
 
-<div class="form-group">
-    <label for="email">Email</label>
-    <input type="text" class="form-control" name="email" ng-model="formData.email">
-</div>
+<div class="form-group" style="padding: 0px;">
+<md-grid-list
+        md-cols="1" 
+        md-row-height-gt-md="1:1" md-row-height="180px"
+        md-gutter="0px" md-gutter-gt-sm="0px" >
+    <md-grid-tile class="gray" md-rowspan="0.5" md-colspan="1" style=" background-image: url(images/naked.jpg); background-size: 100%; background-repeat: no-repeat;" ng-click="formData.theme = 'naked'">
+    	<h4>NAKED</h4>
+    </md-grid-tile>
+    <md-grid-tile class="green" style=" background-image: url(images/death.jpg);background-size: 	100%;  background-repeat: no-repeat;" ng-click="formData.theme = 'death'">
+		<h4>DEATH</h4>
+    </md-grid-tile>
+        <md-grid-tile class="green" style=" background-image: url(images/chasing.jpg);background-size: 	100%;  background-repeat: no-repeat;" ng-click="formData.theme = 'chasing'">
+		<h4>CHASING</h4>
+    </md-grid-tile>
+        <md-grid-tile class="green" style=" background-image: url(images/flying.png);background-size: 	100%;  background-repeat: no-repeat;" ng-click="formData.theme = 'falling'">
+		<h4>FALLING</h4>
+    </md-grid-tile>
+        <md-grid-tile class="green" style=" background-image: url(images/cheating.png);background-size: 	100%;  background-repeat: no-repeat;" ng-click="formData.theme = 'cheating'">
+		<h4>CHEATING</h4>
+    </md-grid-tile>
+        <md-grid-tile class="green" style=" background-image: url(images/flying.jpg);background-size: 	100%;background-position: 0px -110px;  background-repeat: no-repeat;" ng-click="formData.theme = 'flying'">
+		<h4>FLYING</h4>
+
+  </md-grid-list>
 
 <div class="form-group row">
-<div class="col-xs-6 col-xs-offset-3">
-    <a ui-sref="redream.recall" class="btn btn-block btn-info">
-    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
-</div>
+
+    <a id="next" ui-sref="redream.recall" class="btn btn-2 typcn typcn-arrow-right"><h3>Next</h3></a>
+
 </div>
