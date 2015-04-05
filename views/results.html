@@ -1,0 +1,73 @@
+<div ng-controller="RecallController"> <h1 style="margin = 0; color: white">REDREAM</h1> <style>body {
+				margin: 0px;
+				background-color: #000000;
+				overflow: hidden;
+			}
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				color: #ffffff;
+				padding: 5px;
+				font-family:Monospace;
+				font-size:13px;
+				font-weight: bold;
+				text-align:center;
+			}
+
+			a {
+				color: #ff8800;
+			}</style> <div id="container"></div> <script src="scripts/lib/three.min.js"></script> <script src="scripts/DeviceOrientationControls.js"></script> <script>window.addEventListener('load', function() {
+
+	var container, camera, scene, renderer, controls, geometry, mesh;
+
+	var animate = function(){
+
+		window.requestAnimationFrame( animate );
+
+		controls.update();
+		renderer.render(scene, camera);
+
+	};
+
+	container = document.getElementById( 'container' );
+
+	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1100);
+
+	controls = new THREE.DeviceOrientationControls( camera );
+
+	scene = new THREE.Scene();
+
+	var geometry = new THREE.SphereGeometry( 500, 16, 8 );
+	geometry.applyMatrix( new THREE.Matrix4().makeScale( -1, 1, 1 ) );
+
+	var material = new THREE.MeshBasicMaterial( {
+		map: THREE.ImageUtils.loadTexture( 'images/test.jpg' )
+	} );
+
+	var mesh = new THREE.Mesh( geometry, material );
+	scene.add( mesh );
+
+	var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
+	var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
+	var mesh = new THREE.Mesh( geometry, material );
+	scene.add( mesh );
+
+	renderer = new THREE.WebGLRenderer();
+	renderer.setPixelRatio( window.devicePixelRatio );
+	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.domElement.style.position = 'absolute';
+	renderer.domElement.style.top = 0;
+	container.appendChild(renderer.domElement);
+
+	window.addEventListener('resize', function() {
+
+		camera.aspect = window.innerWidth / window.innerHeight;
+		camera.updateProjectionMatrix();
+		renderer.setSize( window.innerWidth, window.innerHeight );
+
+	}, false);
+
+	animate();
+
+}, false);</script> </div>
